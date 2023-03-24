@@ -258,21 +258,24 @@ const addReview = async () => {
     <div className='allReviews'>
     </div>
     <div>
-      {Object.keys(allReviews).length === 0 ? (
-        <p>No reviews found.</p>
-      ) : (
-        Object.entries(allReviews).map(([addr, reviews]) => (
-          <div className='singleReview' key={addr}>
-            <h3>Reviews for {addr}</h3>
-            {reviews.map((review, index) => (
-              <div key={index}>
-                <p>Rating: {review.rating}</p>
-                <p>Comment: {review.comment}</p>
-              </div>
-            ))}
+    {Object.keys(allReviews).length === 0 ? (
+  <p>No reviews found.</p>
+) : (
+  Object.entries(allReviews)
+    .reverse()
+    .map(([addr, reviews]) => (
+      <div className='singleReview' key={addr}>
+        <h3>Reviews for {addr}</h3>
+        {reviews.map((review, index) => (
+          <div key={index}>
+            <p>Rating: {review.rating}</p>
+            <p>Comment: {review.comment}</p>
           </div>
-        ))
-      )}
+        ))}
+      </div>
+    ))
+)}
+
     </div>
 
       <div className='postReview'>
