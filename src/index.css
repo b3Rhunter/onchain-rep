@@ -19,6 +19,8 @@ code {
 }
 
 button {
+  backdrop-filter: blur(5px);
+  z-index: 999px;
   transition: 0.2s;
 }
 
@@ -117,7 +119,14 @@ button:active {
   text-align: left;
   position: fixed;
   top: 0px;
-  left: 24px;
+  left: 0px;
+  z-index: 999px;
+  background-color: #282c34;
+  padding-bottom: 14px;
+  padding-right: 14px;
+  padding-left: 14px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom-right-radius: 7px;
 }
 
 .fetchReviews input {
