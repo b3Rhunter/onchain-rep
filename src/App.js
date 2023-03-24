@@ -166,7 +166,7 @@ const fetchAllReviews = async () => {
 
   return (
     <><div>
-      <h1 style={{textAlign: "center"}}>On-chain Reputation</h1>
+      <h1 style={{textAlign: "center"}}>ETH-REP</h1>
 
       {post && (
         <div className='review'>
