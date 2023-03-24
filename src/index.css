@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family:monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.review {
+  border: 1px solid #fff;
+  border-radius: 14px;
+  height: 350px;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+}
+
+.review textarea {
+  height: 100px;
+  width: 90%;
+  padding: 7px;
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+.review input {
+  margin-top: 10px;
+  width: 90%;
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  text-align: center;
+  padding: 7px 0px;
+  border-radius: 7px;
+}
+
+.review button {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #fff;
+  border-radius: 7px;
+  color: #fff;
+  padding: 7px 14px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+.postClose {
+  width: 100%;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -50px;
+}
+
+.postCloseBtn {
+  font-size: 0.5em;
+  padding: 3px;
+}
+
+.postReview button {
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}
+
+.fetchReviews {
+  text-align: left;
+  position: fixed;
+  top: 0px;
+  left: 24px;
+}
+
+.fetchReviews input {
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  border-radius: 7px;
+  padding: 7px 14px;
+}
+
+.fetchReviews button {
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  padding: 7px 14px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.fetchReviews h4 {
+  margin-bottom: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+.allReviews {
+  text-align: center;
+}
