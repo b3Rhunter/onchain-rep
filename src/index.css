@@ -125,6 +125,7 @@ button:active {
   color: #fff;
   border-radius: 7px;
   padding: 7px 14px;
+  text-align: center;
 }
 
 .fetchReviews button {

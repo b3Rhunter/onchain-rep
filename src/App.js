@@ -22,6 +22,8 @@ function App() {
   const [connected, setConnect] = useState(false)
   const [name, setName] = useState("")
   const [searchedAddress, setSearchedAddress] = useState("");
+  const [searchedAddressInput, setSearchedAddressInput] = useState('');
+
 
 
 
@@ -132,7 +134,7 @@ const addReview = async () => {
 
   const fetchReviews = async () => {
     try {
-      const resolvedAddress = await resolveENS(reviewedAddress);
+      const resolvedAddress = await resolveENS(searchedAddressInput);
       const displayName = await getDisplayName(resolvedAddress);
       setSearchedAddress(displayName);
       const reviewCount = (await contract.getReviews(resolvedAddress)).length;
@@ -149,10 +151,6 @@ const addReview = async () => {
     }
   };
   
-
-
-  
-
   function makePost() {
     setPost(true);
   }
@@ -225,8 +223,8 @@ const addReview = async () => {
         <input
           type="text"
           placeholder="ENS name or wallet address"
-          value={reviewedAddress}
-          onChange={(e) => setReviewedAddress(e.target.value)} />
+          value={searchedAddressInput}
+          onChange={(e) => setSearchedAddressInput(e.target.value)} />
         </div>
         <button onClick={fetchReviews}>Fetch Reviews</button>
       </div>
