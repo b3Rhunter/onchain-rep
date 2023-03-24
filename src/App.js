@@ -97,17 +97,24 @@ const fetchAllReviews = async () => {
 
 
 
-  const addReview = async () => {
-    try {
-      const tx = await contract.addReview(reviewedAddress, rating, comment);
-      await tx.wait();
-      await fetchAllReviews()
-      alert('Review added successfully.');
-    } catch (error) {
-      console.error(error);
-      alert('Failed to add review.');
-    }
-  };
+const addReview = async () => {
+  if (!contract) {
+    alert('Please connect your wallet first.');
+    return;
+  }
+
+  try {
+    const resolvedAddress = await resolveENS(reviewedAddress);
+    const tx = await contract.addReview(resolvedAddress, rating, comment);
+    await tx.wait();
+    await fetchAllReviews();
+    alert('Review added successfully.');
+  } catch (error) {
+    console.error(error);
+    alert('Failed to add review.');
+  }
+};
+
 
   const resolveENS = async (nameOrAddress) => {
     const ensProvider = new ethers.providers.InfuraProvider('mainnet');
